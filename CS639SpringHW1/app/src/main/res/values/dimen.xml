@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Bottom Button -->
+    <!-- Dimensions of the bottom 5 coloured buttons -->
+    <dimen name="bottom_button_height">30dp</dimen>
+    <dimen name="bottom_button_width">30dp</dimen>
+
+    <!-- Dimension: left margin for bottom buttons to seperate them from each other -->
+    <dimen name="bottom_button_margin_left_bottom">5dp</dimen>
+
+
+    <!-- Animal/Bird Image-->
+    <!-- Dimensions of 3 animal images-->
+    <dimen name="animal_button_height">100dp</dimen>
+    <dimen name="animal_button_width">100dp</dimen>
+
+    <!-- Dimension of two rows: Margin of 10dps to add a gap between two images and texts vertically -->
+    <dimen name="vertical_margin">10dp</dimen>
+
+    <!-- Animal/Bird Text-->
+    <!-- Dimension for text view for left margin -->
+    <dimen name="text_margin">15dp</dimen>
+
+
+</resources>

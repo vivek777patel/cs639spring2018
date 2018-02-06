@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CS639SpringHW1</string>
+
+    <!-- Description/Fun Facts of Animal/Bird -->
+    <string name="dog_description">Somewhere between 37-47% of homes in the United States have at least one dog.</string>
+    <string name="cat_description">The outer ear of cat has 32 muscles which allows the cat the rotate each ear 180 degrees - and independently from one another.</string>
+    <string name="bird_description">The names dove and pigeon are used interchangeably, though the former generally refers to smaller members of the family.</string>
+
+    <string name="image_not_selected">Please Select Any Image</string>
 </resources>

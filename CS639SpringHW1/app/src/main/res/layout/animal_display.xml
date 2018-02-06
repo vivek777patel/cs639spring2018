@@ -1,9 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/dogLL"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Start editing this file"/>
+        android:layout_marginTop="@dimen/vertical_margin"
+        >
+
+        <ImageView
+            android:id="@+id/dogImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dog"
+            />
+
+        <TextView
+            android:id="@+id/dogTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginVertical="@dimen/text_margin"
+            android:text="@string/dog_description"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/catLL"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:layout_below="@+id/dogLL"
+        >
+
+        <ImageView
+            android:id="@+id/catImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cat"
+            />
+
+        <TextView
+            android:id="@+id/catTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginVertical="@dimen/text_margin"
+            android:text="@string/cat_description"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/birdLL"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:layout_below="@+id/catLL"
+        >
+
+        <ImageView
+            android:id="@+id/birdImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bird"
+            />
+
+        <TextView
+            android:id="@+id/birdTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginVertical="@dimen/text_margin"
+            android:text="@string/bird_description"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomButtonLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/birdLL"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/bottom_button_margin_left_bottom"
+        >
+
+            <ImageButton
+                android:id="@+id/colorBtn1"
+                android:layout_width="@dimen/bottom_button_width"
+                android:layout_height="@dimen/bottom_button_height"
+                android:background="@color/colorBlueShed" />
+
+            <ImageButton
+                android:id="@+id/colorBtn2"
+                android:layout_width="@dimen/bottom_button_width"
+                android:layout_height="@dimen/bottom_button_height"
+                android:background="@color/colorOrangeShed"
+                android:layout_marginLeft="@dimen/bottom_button_margin_left_bottom"
+                />
+
+            <ImageButton
+                android:id="@+id/colorBtn3"
+                android:layout_width="@dimen/bottom_button_width"
+                android:layout_height="@dimen/bottom_button_height"
+                android:background="@color/colorPinkShed"
+                android:layout_marginLeft="@dimen/bottom_button_margin_left_bottom"
+                />
+
+            <ImageButton
+                android:id="@+id/colorBtn4"
+                android:layout_width="@dimen/bottom_button_width"
+                android:layout_height="@dimen/bottom_button_height"
+                android:background="@color/colorTealShed"
+                android:layout_marginLeft="@dimen/bottom_button_margin_left_bottom"
+                />
+
+            <ImageButton
+                android:id="@+id/colorBtn5"
+                android:layout_width="@dimen/bottom_button_width"
+                android:layout_height="@dimen/bottom_button_height"
+                android:background="@color/colorGreenShed"
+                android:layout_marginLeft="@dimen/bottom_button_margin_left_bottom"
+                />
+
+
+        </LinearLayout>
+
 </RelativeLayout>

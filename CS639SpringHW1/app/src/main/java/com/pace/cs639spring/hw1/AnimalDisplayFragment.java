@@ -26,10 +26,12 @@ public class AnimalDisplayFragment extends Fragment {
 
     public final String TAG="AnimalDisplayFragment";
 
+    // Some Class level variables of Application
     SingleRow dogRow,catRow,birdRow,selectedRow;
     ImageButton colorBtn1,colorBtn2,colorBtn3,colorBtn4,colorBtn5;
     Map<Integer,SingleRow> hm = new HashMap<Integer,SingleRow>();
 
+    // Created a class which holds the component objects of Single row such as Animal/Bird ImageViews, Text Description
     class SingleRow{
 
         ImageView imageView;

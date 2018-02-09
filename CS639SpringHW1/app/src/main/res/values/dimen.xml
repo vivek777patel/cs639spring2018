@@ -6,7 +6,7 @@
     <dimen name="bottom_button_height">30dp</dimen>
     <dimen name="bottom_button_width">30dp</dimen>
 
-    <!-- Dimension: left margin for bottom buttons to seperate them from each other -->
+    <!-- Dimension: left margin for bottom buttons to separate them from each other -->
     <dimen name="bottom_button_margin_left_bottom">5dp</dimen>
 
 

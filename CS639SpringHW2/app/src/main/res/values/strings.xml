@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">CS639SpringHW2</string>
+
+    <!-- Description/Fun Facts of Animal/Bird -->
+    <string name="dog_description">"Researchers have found that dogs use Earth's magnetic fields to align their bowel and bladder movements - and they prefer to relieve themselves along a north-south axis."</string>
+    <string name="cat_description">The outer ear of cat has 32 muscles which allows the cat the rotate each ear 180 degrees - and independently from one another.</string>
+    <string name="bird_description">The names dove and pigeon are used interchangeably, though the former generally refers to smaller members of the family.</string>
+
+    <string name="image_not_selected">Please Select Any Image</string>
+    <string name="desc_not_added">Please Add the description</string>
+    <string name="no_desc_to_show">No Description to show</string>
+    <string name="no_desc_to_delete">No Description to delete</string>
+
+    <string name="add_button">Add</string>
+    <string name="next_button">Next</string>
+    <string name="delete_button">Delete</string>
 </resources>

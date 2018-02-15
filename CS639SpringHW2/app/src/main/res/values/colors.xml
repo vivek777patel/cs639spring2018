@@ -3,4 +3,17 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- White/Black Color for Image Click -->
+    <color name="colorWhite">#fff</color>
+    <color name="colorBlack">#000</color>
+
+    <!-- Bottom Button -->
+    <!-- Color of bottom 5 buttons -->
+    <color name="colorBlueShed">#3F51B5</color>
+    <color name="colorOrangeShed">#ff8a80</color>
+    <color name="colorPinkShed">#FF4081</color>
+    <color name="colorTealShed">#64ffda</color>
+    <color name="colorGreenShed">#b9f6ca</color>
+
 </resources>

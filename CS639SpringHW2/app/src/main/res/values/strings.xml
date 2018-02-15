@@ -5,6 +5,13 @@
     <string name="dog_description">"Researchers have found that dogs use Earth's magnetic fields to align their bowel and bladder movements - and they prefer to relieve themselves along a north-south axis."</string>
     <string name="cat_description">The outer ear of cat has 32 muscles which allows the cat the rotate each ear 180 degrees - and independently from one another.</string>
     <string name="bird_description">The names dove and pigeon are used interchangeably, though the former generally refers to smaller members of the family.</string>
+    <string name="whale_description">The blue whale is the largest animal ever to have lived on Earth; it is larger than any of the giant dinosaurs were.</string>
+    <string name="gorilla_description">A gorilla can be identified by its unique finger print, like humans.</string>
+    <string name="kangaroo_description">Kangaroos are marsupial animals that are found in Australia as well as New Guinea.</string>
+    <string name="kite_description">Large species of hawks reach the length of 22 inches, with wingspan of 55 inches. Hawks are characterized by sharp talons, large, curved bill and muscular legs.</string>
+    <string name="monkey_description">There are currently 264 known monkey species.</string>
+    <string name="parrot_description">There are around 372 different parrot species and believed to be one of the most intelligent bird species</string>
+    <string name="rabbit_description">A female rabbit is called a doe and male rabbit is called a buck.</string>
 
     <string name="image_not_selected">Please Select Any Image</string>
     <string name="desc_not_added">Please Add the description</string>

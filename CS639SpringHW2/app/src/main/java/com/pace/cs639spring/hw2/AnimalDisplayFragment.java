@@ -121,13 +121,13 @@ public class AnimalDisplayFragment extends Fragment {
         ),0));
         animalDescriptionList.add(new AnimalDescription(R.drawable.dog, Arrays.asList(getResources().getString(R.string.dog_description)),0));
         animalDescriptionList.add(new AnimalDescription(R.drawable.cat, Arrays.asList(getResources().getString(R.string.cat_description)),0));
-        /*animalDescriptionList.add(new AnimalDescription(R.drawable.bird, Arrays.asList(getResources().getString(R.string.bird_description)),0));
-        animalDescriptionList.add(new AnimalDescription(R.drawable.dog, Arrays.asList(getResources().getString(R.string.dog_description)),0));
-        animalDescriptionList.add(new AnimalDescription(R.drawable.cat, Arrays.asList(getResources().getString(R.string.cat_description)),0));
-        animalDescriptionList.add(new AnimalDescription(R.drawable.bird, Arrays.asList(getResources().getString(R.string.bird_description)),0));
-        animalDescriptionList.add(new AnimalDescription(R.drawable.dog, Arrays.asList(getResources().getString(R.string.dog_description)),0));
-        animalDescriptionList.add(new AnimalDescription(R.drawable.cat, Arrays.asList(getResources().getString(R.string.cat_description)),0));
-        animalDescriptionList.add(new AnimalDescription(R.drawable.bird, Arrays.asList(getResources().getString(R.string.bird_description)),0));*/
+        animalDescriptionList.add(new AnimalDescription(R.drawable.whale, Arrays.asList(getResources().getString(R.string.whale_description)),0));
+        animalDescriptionList.add(new AnimalDescription(R.drawable.gorilla, Arrays.asList(getResources().getString(R.string.gorilla_description)),0));
+        animalDescriptionList.add(new AnimalDescription(R.drawable.kangaroo, Arrays.asList(getResources().getString(R.string.kangaroo_description)),0));
+        animalDescriptionList.add(new AnimalDescription(R.drawable.kite, Arrays.asList(getResources().getString(R.string.kite_description)),0));
+        animalDescriptionList.add(new AnimalDescription(R.drawable.monkey, Arrays.asList(getResources().getString(R.string.monkey_description)),0));
+        animalDescriptionList.add(new AnimalDescription(R.drawable.parrot, Arrays.asList(getResources().getString(R.string.parrot_description)),0));
+        animalDescriptionList.add(new AnimalDescription(R.drawable.rabbit, Arrays.asList(getResources().getString(R.string.rabbit_description)),0));
 
         mAdapter = new AnimalDisplayListViewAdapter(mAnimalDisplayView.getContext(), animalDescriptionList);
         mListView.setAdapter(mAdapter);

@@ -5,4 +5,5 @@ package com.pace.cs639spring.hw2;
  */
 
 public interface OnItemClickListener {
+    void onItemClick(AnimalDisplayRecyclerViewAdapter.ViewHolder vh);
 }

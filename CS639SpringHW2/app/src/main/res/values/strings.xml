@@ -15,8 +15,8 @@
 
     <string name="image_not_selected">Please Select Any Image</string>
     <string name="desc_not_added">Please Add the description</string>
-    <string name="no_desc_to_show">No Description to show</string>
-    <string name="no_desc_to_delete">No Description to delete</string>
+    <string name="no_desc_to_show">Only one description present</string>
+    <string name="no_desc_to_delete">"You Can't delete Description atleast one description required"</string>
 
     <string name="add_button">Add</string>
     <string name="next_button">Next</string>

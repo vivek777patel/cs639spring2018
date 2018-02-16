@@ -26,21 +26,26 @@ import java.util.List;
 
 public class AnimalDisplayFragment extends Fragment {
 
-    public static ListView mListView;
     public final String TAG = "AnimalDisplayFragment";
 
     View mAnimalDisplayView;
     EditText mAddDescEditText;
     Button mAddDescBtn;
+
+    public static ListView mListView;
     AnimalDisplayListViewAdapter mAdapter;
     ImageButton colorBtn1,colorBtn2,colorBtn3,colorBtn4,colorBtn5;
+
+    List<AnimalDescription> animalDescriptionList = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         mAnimalDisplayView = inflater.inflate(R.layout.animal_display, container, false);
-        mListView = (ListView)mAnimalDisplayView.findViewById(R.id.imgTxtViewLstView);
 
+        mListView = (ListView)mAnimalDisplayView.findViewById(R.id.imgTxtViewLstView);
+        mListView.setItemsCanFocus(false);
+        // Configure the list view data
         configureListView();
         return mAnimalDisplayView;
     }
@@ -59,6 +64,7 @@ public class AnimalDisplayFragment extends Fragment {
         colorBtn4 = mAnimalDisplayView.findViewById(R.id.colorBtn4);
         colorBtn5 = mAnimalDisplayView.findViewById(R.id.colorBtn5);
 
+        // Setting the click listener for color buttons
         colorBtn1.setOnClickListener(colorButtonClickListener());
         colorBtn2.setOnClickListener(colorButtonClickListener());
         colorBtn3.setOnClickListener(colorButtonClickListener());
@@ -75,10 +81,11 @@ public class AnimalDisplayFragment extends Fragment {
 
                 ImageButton ib = (ImageButton) view;
                 ColorDrawable dc = (ColorDrawable)ib.getBackground();
-                int colorId = dc.getColor();
 
                 //Check if Any Animal/Bird is selected, if selected change the color else display Toast message
                 if(mAdapter.mSelectedAnimalRow!=null){
+                    int colorId = mAdapter.mSelectedAnimalRow.mAnimalSelectedIndex==mAdapter.mSelectedIndex? dc.getColor():R.color.colorBlack;
+                    mAdapter.mColor = colorId;
                     mAdapter.mSelectedAnimalRow.mImageView.setColorFilter(colorId);
                 }
                 else{
@@ -93,12 +100,13 @@ public class AnimalDisplayFragment extends Fragment {
         View.OnClickListener vocl = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Add new description to selected Animal/Bird
                 String newDesc = mAddDescEditText.getText().toString();
-                if(newDesc.equalsIgnoreCase("")){
+                if(newDesc.equalsIgnoreCase("")){// If no description is added show Toast message
                     Toast.makeText(mAnimalDisplayView.getContext() , R.string.desc_not_added, Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(null!=mAdapter.mSelectedAnimalRow){
+                if(null!=mAdapter.mSelectedAnimalRow){// If any Image is not selected then display Toast Message otherwise add description
                     mAdapter.mSelectedAnimalRow.mAnimalDescList.add(newDesc);
                     mAddDescEditText.setText("");
                     InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -114,11 +122,9 @@ public class AnimalDisplayFragment extends Fragment {
     }
 
     public void configureListView(){
-        List<AnimalDescription> animalDescriptionList = new ArrayList<>();
 
-        animalDescriptionList.add(new AnimalDescription(R.drawable.bird, Arrays.asList(getResources().getString(R.string.bird_description),"sdfsss","ssss"
-
-        ),0));
+        // First Animal with multiple description
+        animalDescriptionList.add(new AnimalDescription(R.drawable.bird, Arrays.asList(getResources().getString(R.string.bird_description),"Desc1","Desc2"),0));
         animalDescriptionList.add(new AnimalDescription(R.drawable.dog, Arrays.asList(getResources().getString(R.string.dog_description)),0));
         animalDescriptionList.add(new AnimalDescription(R.drawable.cat, Arrays.asList(getResources().getString(R.string.cat_description)),0));
         animalDescriptionList.add(new AnimalDescription(R.drawable.whale, Arrays.asList(getResources().getString(R.string.whale_description)),0));
@@ -131,6 +137,6 @@ public class AnimalDisplayFragment extends Fragment {
 
         mAdapter = new AnimalDisplayListViewAdapter(mAnimalDisplayView.getContext(), animalDescriptionList);
         mListView.setAdapter(mAdapter);
-
+        mAdapter.notifyDataSetChanged();
     }
 }

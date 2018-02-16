@@ -1,7 +1,6 @@
 package com.pace.cs639spring.hw2;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -10,9 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by kachi on 2/7/18.
@@ -25,7 +22,9 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
 
     ViewHolder mSelectedAnimalRow;
     List<AnimalDescription> mAnimalList;
-    Map<Integer,ViewHolder> mAnimalHM = new HashMap<>();
+
+    int mSelectedIndex=-1;
+    int mColor=R.color.colorBlack; //Setting default color to black
 
     AnimalDisplayListViewAdapter(Context context, List<AnimalDescription> exampleObjectList) {
         mContext = context;
@@ -59,18 +58,25 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
         AnimalDescription object = (AnimalDescription) getItem(position);
         ViewHolder viewHolder = (ViewHolder) convertView.getTag();
 
+        int visibility = mSelectedIndex==position?View.VISIBLE:View.INVISIBLE;
+
         viewHolder.mImageView.setImageResource(object.mAnimalImageId);
         viewHolder.mImageView.setTag(object.mAnimalImageId);
         viewHolder.mTextView.setText(object.mAnimalDescList != null && !object.mAnimalDescList.isEmpty() ? object.mAnimalDescList.get(0):"");
         viewHolder.mAnimalDescList = object.mAnimalDescList;
         viewHolder.mAnimalDescListIndex = 0;
 
+        // Setting onclick event on Imageview instead of item
         viewHolder.mImageView.setOnClickListener(animalImageViewOnClickListener(viewHolder));
+
         // Setting on click listener for next and delete buttons
         viewHolder.mNextDescBtn.setOnClickListener(nextDescBtnOnClickListener());
         viewHolder.mDeleteBtn.setOnClickListener(deleteBtnOnClickListener());
 
-        mAnimalHM.put(object.mAnimalImageId,viewHolder);
+        viewHolder.mAnimalSelectedIndex = position;
+        viewHolder.mImageView.setColorFilter(mSelectedIndex!=position ? R.color.colorBlack:mColor);
+
+        setVisibility(viewHolder,visibility);
 
         return convertView;
     }
@@ -80,23 +86,20 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
         View.OnClickListener vocl = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Check for the size in the Animal Description List if size is > 1, show Toast message as 1 description has to be present
                 int currIndex = mSelectedAnimalRow.mAnimalDescListIndex;
 
-                if(mSelectedAnimalRow.mAnimalDescList.size()>0)
+                if(mSelectedAnimalRow.mAnimalDescList.size()>1) {
                     mSelectedAnimalRow.mAnimalDescList.remove(currIndex);
+                    currIndex=mSelectedAnimalRow.mAnimalDescListIndex=
+                            mSelectedAnimalRow.mAnimalDescListIndex==0?0:--mSelectedAnimalRow.mAnimalDescListIndex;// When delete first description set the list index again back to 0
+
+                    mSelectedAnimalRow.mTextView.setText(mSelectedAnimalRow.mAnimalDescList.get(currIndex));
+                }
                 else {
                     Toast.makeText(mContext, R.string.no_desc_to_delete, Toast.LENGTH_SHORT).show();
                     return;
-                }
-
-                currIndex=mSelectedAnimalRow.mAnimalDescListIndex=
-                        mSelectedAnimalRow.mAnimalDescList.size()==0
-                                ? -1 : --mSelectedAnimalRow.mAnimalDescListIndex;
-
-                if(currIndex>=0)
-                    mSelectedAnimalRow.mTextView.setText(mSelectedAnimalRow.mAnimalDescList.get(currIndex));
-                else{
-                    mSelectedAnimalRow.mTextView.setText("");
                 }
             }
         };
@@ -112,10 +115,11 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
                                 mSelectedAnimalRow.mAnimalDescListIndex==mSelectedAnimalRow.mAnimalDescList.size()-1 ?
                                         0 : ++mSelectedAnimalRow.mAnimalDescListIndex;
 
-                if(mSelectedAnimalRow.mAnimalDescList.size()!=0)
-                    mSelectedAnimalRow.mTextView.setText(mSelectedAnimalRow.mAnimalDescList.get(currIndex));
-                else
+                // Check if more than one description is present and show message else change description
+                if(mSelectedAnimalRow.mAnimalDescList.size()==1)
                     Toast.makeText(mContext, R.string.no_desc_to_show, Toast.LENGTH_SHORT).show();
+                else
+                    mSelectedAnimalRow.mTextView.setText(mSelectedAnimalRow.mAnimalDescList.get(currIndex));
             }
         };
         return vocl;
@@ -128,8 +132,9 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
             public void onClick(View v) {
                 ImageView selectedAnimal = (ImageView) v;
                 int selectedAnimalId = (Integer)selectedAnimal.getTag();
-                Log.i(TAG,"Selected Animal Id : "+selectedAnimalId);
+                mSelectedIndex = viewHolder.mAnimalSelectedIndex;
 
+                // Set global variable for selected animal row and change visibility accordingly
                 if(mSelectedAnimalRow!=null){
                     if(selectedAnimal!=mSelectedAnimalRow.mImageView){
                         mSelectedAnimalRow.mImageView.setColorFilter(R.color.colorBlack);
@@ -143,14 +148,16 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
                     mSelectedAnimalRow=viewHolder;
                 }
             }
-            public void setVisibility(ViewHolder animalViewHolder,int visibility){
-                animalViewHolder.mTextView.setVisibility(visibility);
-                animalViewHolder.mNextDescBtn.setVisibility(visibility);
-                animalViewHolder.mDeleteBtn.setVisibility(visibility);
-            }
+
         };
 
         return vocl;
+    }
+
+    public void setVisibility(ViewHolder animalViewHolder,int visibility){
+        animalViewHolder.mTextView.setVisibility(visibility);
+        animalViewHolder.mNextDescBtn.setVisibility(visibility);
+        animalViewHolder.mDeleteBtn.setVisibility(visibility);
     }
 
     static class ViewHolder {
@@ -163,6 +170,7 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
         // Using for description delete and to display next description
         List<String> mAnimalDescList;
         int mAnimalDescListIndex;
+        int mAnimalSelectedIndex; // To get the selected index of image
 
         ViewHolder(ImageView imageView, TextView textView,Button nextDescBtn,Button deleteBtn) {
             mImageView = imageView;
@@ -170,6 +178,5 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
             mNextDescBtn = nextDescBtn;
             mDeleteBtn = deleteBtn;
         }
-
     }
 }

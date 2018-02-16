@@ -18,6 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/dog"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             />
 
         <TextView
@@ -46,7 +48,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/next_button"
                 android:visibility="invisible"
-
+                android:focusableInTouchMode="false"
+                android:focusable="false"
             />
 
             <Button
@@ -55,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/delete_button"
                 android:visibility="invisible"
-
+                android:focusableInTouchMode="false"
+                android:focusable="false"
             />
 
     </LinearLayout>

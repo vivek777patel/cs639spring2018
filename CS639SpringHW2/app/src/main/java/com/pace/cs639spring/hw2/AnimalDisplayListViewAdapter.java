@@ -133,7 +133,7 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
                 ImageView selectedAnimal = (ImageView) v;
                 int selectedAnimalId = (Integer)selectedAnimal.getTag();
                 mSelectedIndex = viewHolder.mAnimalSelectedIndex;
-
+                mColor = R.color.colorBlack;
                 // Set global variable for selected animal row and change visibility accordingly
                 if(mSelectedAnimalRow!=null){
                     if(selectedAnimal!=mSelectedAnimalRow.mImageView){

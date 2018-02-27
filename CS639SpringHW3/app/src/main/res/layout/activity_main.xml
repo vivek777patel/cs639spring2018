@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5.5"
+    tools:context="base.vivek.cs639springhw3.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/null_dimen"
+        android:layout_weight="4"
+        android:layout_margin="@dimen/chart_padding">
+
+        <base.vivek.cs639springhw3.charts.BarGraphView
+            android:id="@+id/custBarChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            custom:maxBarColor="@color/color_of_highest_bars"
+            custom:noOfMaxBar="5"
+            custom:otherBarColor="@color/color_of_other_bars"
+            custom:title="@string/chart_title" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_padding_between_chart_and_label"
+        android:layout_weight="0.5">
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_date" />
+
+        <EditText
+            android:id="@+id/dateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dateTextView"
+            android:inputType="textPersonName" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_padding_between_relative_layouts"
+        android:layout_weight="0.5">
+
+        <TextView
+            android:id="@+id/attendanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_attendance"
+            android:gravity="center_horizontal"
+            />
+
+        <EditText
+            android:id="@+id/attendanceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_toRightOf="@+id/attendanceTextView" />
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/add_button" />
+
+</LinearLayout>

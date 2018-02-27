@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CS639SpringHW3</string>
+    <string name="chart_title">Bar Chart</string>
+
+    <string name="enter_date">Please Enter date in (mm/dd)</string>
+    <string name="enter_attendance">Please Enter attendance</string>
+
+    <!-- Validation Messages -->
+    <string name="date_required">Date field is mandatory in mm/dd format</string>
+    <string name="attendance_required">Attendance field is mandatory</string>
+    <string name="enter_only_number_attendance">Please enter only number in attendance field</string>
+    <string name="date_format_wrong">Please enter correct date format</string>
+
+    <string name="add_button">Add</string>
+</resources>

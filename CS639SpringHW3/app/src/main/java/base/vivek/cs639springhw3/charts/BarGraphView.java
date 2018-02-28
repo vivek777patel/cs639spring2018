@@ -81,8 +81,6 @@ public class BarGraphView extends View {
         mGridPaint.setStyle(Paint.Style.STROKE);
         mGridPaint.setColor(Color.BLACK);
 
-        mArrayMaxValue = Math.max(mArrayMaxValue,value);
-
     }
 
     @Override
@@ -159,8 +157,19 @@ public class BarGraphView extends View {
             mDateAttendance.remove(mDateAttendance.firstKey());
         }
         mDateAttendance.put(barLabel,value);
+        Log.i(TAG,"Value : "+value);
+        updateMaxValue();
     }
-
+    /*
+    *   Method to update the max value bar
+    * */
+    private void updateMaxValue(){
+        mArrayMaxValue = Integer.MIN_VALUE;
+        for (Map.Entry<String,Integer> entry : mDateAttendance.entrySet()) {
+            Log.i(TAG,"Loop : "+entry.getValue());
+            mArrayMaxValue = Math.max(entry.getValue(),mArrayMaxValue);
+        }
+    }
 
     /*
     *   Method called when new value is added to the list

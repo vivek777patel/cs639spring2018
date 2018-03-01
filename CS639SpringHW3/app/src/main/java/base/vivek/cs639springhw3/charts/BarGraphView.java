@@ -87,7 +87,8 @@ public class BarGraphView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         // TODO : Write logic to display bar chart
-        final int height = getHeight();//To get view height
+        //Log.i(TAG,"Height :: "+getHeight()+" 200dp "+dpToPx(200));
+        final int height = Math.max(getHeight(),dpToPx(200));//To get view height
         final int width = getWidth();// To get view width
         final float gridLeft = mPadding;
 
@@ -157,7 +158,7 @@ public class BarGraphView extends View {
             mDateAttendance.remove(mDateAttendance.firstKey());
         }
         mDateAttendance.put(barLabel,value);
-        Log.i(TAG,"Value : "+value);
+        //Log.i(TAG,"Value : "+value);
         updateMaxValue();
     }
     /*
@@ -166,7 +167,7 @@ public class BarGraphView extends View {
     private void updateMaxValue(){
         mArrayMaxValue = Integer.MIN_VALUE;
         for (Map.Entry<String,Integer> entry : mDateAttendance.entrySet()) {
-            Log.i(TAG,"Loop : "+entry.getValue());
+            //Log.i(TAG,"Loop : "+entry.getValue());
             mArrayMaxValue = Math.max(entry.getValue(),mArrayMaxValue);
         }
     }

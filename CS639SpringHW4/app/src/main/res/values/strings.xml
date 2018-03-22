@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CS639SpringHW4</string>
+
+    <string name="example_value">Example : </string>
+    <string name="create_own">Create Your Own</string>
+    <string name="radius_value">Radius : </string>
+
+    <string name="speed_value">Speed : </string>
+    <string name="color_value">Color : </string>
+    <string name="add_button">Add</string>
+    <string name="plus_button"> + </string>
+    <string name="minus_button"> - </string>
+
+    <!-- Validation Messages -->
+
+    <string name="radius_required">Radius field can not be empty </string>
+    <string name="speed_required">Speed field can not be empty </string>
+    <string name="color_required">Please select any color</string>
+
+    <string name="radius_must_be_number">Radius field must be non zero numeric </string>
+    <string name="speed_must_be_number">Speed field must be non zero numeric </string>
+
+</resources>

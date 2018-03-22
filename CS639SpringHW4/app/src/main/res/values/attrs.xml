@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Attributes for the Custom Circle Component -->
+    <declare-styleable name="CustomCircle">
+        <attr name="circleColor" format="color" />
+        <!--<attr name="circleSize" format="dimension" />-->
+        <attr name="circleSize" format="integer" />
+        <attr name="circleSpeed" format="integer" />
+    </declare-styleable>
+</resources>

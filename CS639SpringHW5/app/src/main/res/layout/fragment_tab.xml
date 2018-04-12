@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/linearlayout_padding">
+
+            <TextView
+                android:id="@+id/lvNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/list_name_font" />
+
+            <TextView
+                android:id="@+id/lvBioTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/list_bio_font" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/previousTabButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_size"
+                    android:layout_marginEnd="@dimen/view_margin"
+                    android:text="@string/previous_tab"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/nextTabButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_size"
+                    android:text="@string/next_tab"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+</RelativeLayout>

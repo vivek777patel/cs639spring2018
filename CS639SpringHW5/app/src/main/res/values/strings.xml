@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CS639SpringHW5</string>
+
+    <string name="person_name">Name : </string>
+    <string name="person_bio">Bio : </string>
+
+    <string name="add_tab">Add Tab</string>
+    <string name="clear_tab">Clear Tab</string>
+    <string name="open_tab">Open Tab</string>
+
+    <string name="previous_tab">Previous</string>
+    <string name="next_tab">Next</string>
+
+    <string name="name_bio_required">Name and Bio are mandatory fields</string>
+    <string name="only_four_tab_acceptable">Only upto four tabs are acceptable</string>
+    <string name="no_value_in_list">List is empty</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="font_size">20sp</dimen>
+
+    <dimen name="button_size">50dp</dimen>
+    <dimen name="view_margin">5dp</dimen>
+
+    <dimen name="listview_margin">10dp</dimen>
+    <dimen name="bottom_layout_height">150dp</dimen>
+
+    <dimen name="list_name_font">25sp</dimen>
+    <dimen name="list_bio_font">20sp</dimen>
+
+    <dimen name="linearlayout_margin">10dp</dimen>
+    <dimen name="linearlayout_padding">10dp</dimen>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/place_autocomplete_fragment"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/selected_place_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/selected_place_image_view"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/selected_place_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="@dimen/image_text_padding_left"
+            android:text="@string/no_place_selected"
+            android:textSize="@dimen/font_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selected_place_weather_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/selected_place_weather_image_view"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/selected_place_weather_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="@dimen/image_text_padding_left"
+            android:text="@string/no_place_selected"
+            android:textSize="@dimen/font_size"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

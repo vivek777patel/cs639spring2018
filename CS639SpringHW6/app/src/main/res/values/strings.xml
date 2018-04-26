@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CS639SpringHW6</string>
+    <string name="no_place_selected">No Place Selected</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="problem_with_response_json">Response JSON data might be changed</string>
+    <string name="response_json_not_available">Response JSON not available</string>
+    <string name="success_fetch_msg">Current temperature of %s is %s\u00B0</string>
+</resources>
